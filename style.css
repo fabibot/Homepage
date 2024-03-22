@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "whocats";
+    src:
+      local("Trickster"),
+      url("Whocats.otf") format("opentype"),
+  }
+html{
+    font-size: 62.3%;
+    --main-color : #ffe941;
+    --second-color : #54acfb;
+    font-family: 'whocats', Courier, monospace;
+}
+
+header, footer, .content{
+    padding: 30px;
+}
+
+header{
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+}
+header > div {
+    background-color: aquamarine;
+    padding: 5px;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+.contentGrid{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.element{
+    background-color: var(--second-color);
+    width: 100%;
+    height: 100px;
+
+}
+
+footer{
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+}
+
+footer >img{
+    margin: 0px 50px;
+}
