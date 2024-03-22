@@ -1,3 +1,53 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/***********************************************************/
+
 @font-face {
     font-family: "whocats";
     src:
@@ -6,48 +56,195 @@
   }
 html{
     font-size: 62.3%;
-    --main-color : #ffe941;
-    --second-color : #54acfb;
+    --main-color : #fff187;
+    --second-color : #efefef94; /*#54acfb;*/
+    --third-color : #c3c6f5;
     font-family: 'whocats', Courier, monospace;
+}
+h4, figcaption{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    font-size: 4rem;
+    margin: 0px 0px 20px 0px;
+}
+
+h3{
+    font-size: 1.8rem;
+    margin: 17px;
+}
+
+h4{
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: initial;
+    margin: 12px;
+}
+header, figure >img, header > div, .element, .divImage2>img {
+    box-shadow: 1px 1px 5px #4c4c7ba6;
+
 }
 
 header, footer, .content{
-    padding: 30px;
+    padding: 60px 100px;
 }
 
 header{
     background-color: var(--main-color);
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
-header > div {
-    background-color: aquamarine;
-    padding: 5px;
+.about {
+    background-color: var(--third-color);
+    padding: 22px 30px;
+    min-width: 300px;
+    max-width: 500px;
+    flex-grow: 1;
+}
+.divImage1{
+    flex-grow: 1;
+    min-width: 360px;
+    max-width: 700px;
+    box-shadow: none;
+    padding: 22px 30px;
 }
 
-h3{
-    font-size: 1rem;
+figure{
+    padding: 0px;
+    z-index: 1;
+
+}
+figure > img {
+    width: 100%;
 }
 
+/* figcaption{
+    transform: translate(11px, -50px);
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+} */
+
+.iconeDiv{
+    display: flex;
+    justify-content: end;
+}
+
+.iconeDiv > img{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+.content{
+    background-color: var(--second-color)
+}
 .contentGrid{
     display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    flex-wrap: wrap;
+    max-width: 95%;
 }
 .element{
-    background-color: var(--second-color);
+    background-color: white;
+}
+.image {
     width: 100%;
-    height: 100px;
-
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contentGrid .element:nth-child(1) .image{
+    background-image: url("images/chien1.jpeg");
+    
+}
+.contentGrid .element:nth-child(2) .image{
+    background-image: url("images/chien2.jpeg");
+    
+}
+.contentGrid .element:nth-child(3) .image{
+    background-image: url("images/chien3.jpeg");
+    
+}
+.contentGrid .element:nth-child(4) .image{
+    background-image: url("images/chien4.jpeg");
+    
+}
+.contentGrid .element:nth-child(5) .image{
+    background-image: url("images/chien5.jpeg");
+    
+}
+.contentGrid .element:nth-child(6) .image{
+    background-image: url("images/chien6.jpeg");
+    
 }
 
 footer{
     background-color: var(--main-color);
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-footer >img{
-    margin: 0px 50px;
+footer div:first-child{
+    max-width: 500px;
+    min-width: 300px;
+    padding: 0px 30px 50px 0px;
 }
+
+.divImage2 >img{
+    width: 100%;
+}
+
+footer > div, footer > .divImage2{
+    flex-grow: 1;
+}
+
+.divImage2{
+    max-width: 510px;
+    padding-right: 20px;
+}
+
+.large{
+    content: "";
+    margin: 7em;
+    display: block;
+    font-size: 24%;
+}
+
+.flyingBone{
+    width: 115px;
+    height: 115px;
+    background-image: url('images/bone.png');
+    background-size: contain;
+    position: absolute;
+    z-index: 2;
+    left: 150px;
+    top: 150px;
+    animation: 4s infinite;
+    animation-name: flying;
+}
+
+@keyframes flying {
+    from {
+      transform: translate(0px, 0px) rotate(10deg);
+    }
+
+    25% {
+        transform: translate(800px, 400px) rotate(-360deg);
+    }
+  
+    50% {
+      transform: translate(600px, -100px) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(50px, 200px) rotate(360deg);
+
+    }
+
+    to {
+        transform: translate(0px, 0px) rotate(1deg)
+    }
+  }
+
